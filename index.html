@@ -6,9 +6,9 @@
 <body>
   <h1>Loud and Clear</h1>
 
-  <div id="idme-verification">
+  <!-- <div id="idme-verification">
     <p>Verify with ID.me as the primary action</p>
-    <a href="https://api.id.me/oauth/authorize?client_id=[YOUR_CLIENT_ID]&redirect_uri=[YOUR_REDIRECT_URI]&response_type=code&scope=military&state=488e864b">
+    <a href="https://api.id.me/oauth/authorize?client_id=fde9a089f377e3462ad46783526dfaed&redirect_uri=[YOUR_REDIRECT_URI]&response_type=code&scope=military&state=488e864b">
       <img src="https://s3.amazonaws.com/idme/developer/idme-buttons/assets/img/verify.svg" height="50"/>
     </a>
     <p>
@@ -16,6 +16,17 @@
       Verification by ID.me •
       <a href="https://www.id.me/about">What is ID.me?</a>
     </p>
-  </div>
+  </div> -->
+
+  <span
+  id="idme-wallet-button"
+  data-scope="military"
+  data-client-id="fde9a089f377e3462ad46783526dfaed"
+  data-redirect="https://merling-media.github.io/loudandclear/"
+  data-response="code"
+  data-text="[AFFINITY GROUP] receives [OFFER] with ID.me"
+  data-show-verify="true">
+</span>
+<script src="https://s3.amazonaws.com/idme/developer/idme-buttons/assets/js/idme-wallet-button.js"></script>
 </body>
 </html>
