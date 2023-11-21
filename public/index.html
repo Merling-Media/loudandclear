@@ -1,104 +1,18 @@
-<!DOCTYPE html>
 <html>
-<head>
-  <title>Sign In</title>
-</head>
-<body>
-  <h1>Loud and Clear</h1>
 
-  <!-- <div id="idme-verification">
-    <p>Verify with ID.me as the primary action</p>
-    <a href="https://api.id.me/oauth/authorize?client_id=fde9a089f377e3462ad46783526dfaed&redirect_uri=[YOUR_REDIRECT_URI]&response_type=code&scope=military&state=488e864b">
-      <img src="https://s3.amazonaws.com/idme/developer/idme-buttons/assets/img/verify.svg" height="50"/>
-    </a>
-    <p>
-      <img src="https://developers.id.me/assets/buttons/lock-icon-a5b18fbb34d393a80967c08399786f95955ee818b693b97d3f37698e2bc113f2.svg" height="10"/>
-      Verification by ID.me •
-      <a href="https://www.id.me/about">What is ID.me?</a>
-    </p>
-  </div> -->
+  <head>
+    <!-- jQuery Dependency -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
 
-  <!-- <span
-  id="idme-wallet-button"
-  data-scope="military"
-  data-client-id="fde9a089f377e3462ad46783526dfaed"
-  data-redirect="https://merling-media.github.io/loudandclear/"
-  data-response="code"
-  data-text="[AFFINITY GROUP] receives [OFFER] with ID.me"
-  data-show-verify="true">
-</span>
-<script src="https://s3.amazonaws.com/idme/developer/idme-buttons/assets/js/idme-wallet-button.js"></script> -->
+    <!-- ID.me Sample Code -->
+    <script src="idme.js"></script>
+  </head>
 
-<div class="outerCspContainer">
-  <div class="innerCspContainer">
-      
-      <span><h2><b>Sign in with an existing account</b></h2></span>
-      
-      
-      
+  <body>
+    <!-- ID.me Widget Buttons -->
+    <span id="idme-wallet-button" data-scope="military" data-client-id="fde9a089f377e3462ad46783526dfaed" data-response="token" data-redirect="https://loud-and-clear-984cb.web.app/" data-op="signin" data-text="Sign in with ID.me" data-show-verify="true"></span>
 
-      
-      <div class="cspContainer">
-          <a id="aIdmeSignin" class="sadi-underline" href="https://sa.www4.irs.gov/sadiapi/oidc/init/req?cspSelect=idmeprod&amp;TYPE=33554433&amp;REALMOID=06-0006b18e-628e-1187-a229-7c2b0ad00000&amp;GUID=&amp;SMAUTHREASON=0&amp;METHOD=GET&amp;SMAGENTNAME=-SM-u0ktItgVFneUJDzkQ7tjvLYXyclDooCJJ7%2bjXGjg3YC5id2x9riHE98hoVgd1BBv&amp;TARGET=-SM-https%3a%2f%2fsa%2ewww4%2eirs%2egov%2fola%2f&amp;op=signin" >
-              <img src="https://s3.amazonaws.com/idme/developer/idme-buttons/assets/img/signin.svg" 
-                  height="44" width="300" padding="0"  alt="Sign In with ID.me" />
-          </a>
-      </div>
-      
-      
-      <input type="hidden" id="IDmeLink" value="https://sa.www4.irs.gov/sadiapi/oidc/init/req?cspSelect=idmeprod&amp;TYPE=33554433&amp;REALMOID=06-0006b18e-628e-1187-a229-7c2b0ad00000&amp;GUID=&amp;SMAUTHREASON=0&amp;METHOD=GET&amp;SMAGENTNAME=-SM-u0ktItgVFneUJDzkQ7tjvLYXyclDooCJJ7%2bjXGjg3YC5id2x9riHE98hoVgd1BBv&amp;TARGET=-SM-https%3a%2f%2fsa%2ewww4%2eirs%2egov%2fola%2fop=signin" />       
-      
-      
-      
-      
-      
+    <script src="https://s3.amazonaws.com/idme/developer/idme-buttons/assets/js/idme-wallet-button.js"></script>
+  </body>
 
-
-      
-      <span> 
-          <div class="separator"><div class="separator-spacer"><b>OR</b></div></div><p/>
-      </span>
-      
-      
-      <span> 
-          <h2><b>Create a new account</b></h2>
-      </span>
-      
-      
-      
-      
-      
-      <div class="cspContainer">
-          <a id="aIdmeCreateAcct" class="sadi-underline" href="https://sa.www4.irs.gov/sadiapi/oidc/init/req?cspSelect=idmeprod&amp;TYPE=33554433&amp;REALMOID=06-0006b18e-628e-1187-a229-7c2b0ad00000&amp;GUID=&amp;SMAUTHREASON=0&amp;METHOD=GET&amp;SMAGENTNAME=-SM-u0ktItgVFneUJDzkQ7tjvLYXyclDooCJJ7%2bjXGjg3YC5id2x9riHE98hoVgd1BBv&amp;TARGET=-SM-https%3a%2f%2fsa%2ewww4%2eirs%2egov%2fola%2f&amp;op=signup">
-              <img src="/secureaccess/ui/resources/img/idme/create-acct.svg" 
-                  height="44" width="300" padding="0"  alt="Create an account with ID.me" />
-          </a>
-      </div>                       
-  </div>
-  <div style="flex: 1;"></div>
-</div>
-</body>
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyCZy6dsPIDjcmA40RzeLIZrA38V5wz5jnw",
-    authDomain: "loud-and-clear-984cb.firebaseapp.com",
-    projectId: "loud-and-clear-984cb",
-    storageBucket: "loud-and-clear-984cb.appspot.com",
-    messagingSenderId: "513069427508",
-    appId: "1:513069427508:web:6c935e5318b0edbd2cd361",
-    measurementId: "G-VZGPQEBBFW"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
 </html>
